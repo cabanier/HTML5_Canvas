@@ -324,7 +324,7 @@
 
    <h1>HTML Canvas 2D Context</h1>
    <h2 class="no-num no-toc" id=generatedID></h2>
-   <h2 class="no-num no-toc" id="editor's-draft-date-1-january-1970">Editor's Draft 26 September 2012</h2>
+   <h2 class="no-num no-toc" id="editor's-draft-date-1-january-1970">Editor's Draft 27 September 2012</h2>
    <dl><dt>Latest Published Version:</dt>
     <dd><a href=http://www.w3.org/TR/2dcontext/>http://www.w3.org/TR/2dcontext/</a></dd>
     <dt>Latest Editor's Draft:</dt>
@@ -447,7 +447,7 @@
   Group</a> is the W3C working group responsible for this
   specification's progress along the W3C Recommendation
   track.
-  This specification is the 26 September 2012 Editor's Draft.
+  This specification is the 27 September 2012 Editor's Draft.
   </p>
 
 
@@ -660,13 +660,13 @@ interface <dfn id=canvasdrawingstyles>CanvasDrawingStyles</dfn> {
 interface <dfn id=canvaspathmethods>CanvasPathMethods</dfn> {
   // shared path API methods
   void <a href=#dom-context-2d-closepath title=dom-context-2d-closePath>closePath</a>();
-  void <a href=#dom-context-2d-moveto title=dom-context-2d-moveTo>moveTo</a>(double x, double y);
-  void <a href=#dom-context-2d-lineto title=dom-context-2d-lineTo>lineTo</a>(double x, double y);
-  void <a href=#dom-context-2d-quadraticcurveto title=dom-context-2d-quadraticCurveTo>quadraticCurveTo</a>(double cpx, double cpy, double x, double y);
-  void <a href=#dom-context-2d-beziercurveto title=dom-context-2d-bezierCurveTo>bezierCurveTo</a>(double cp1x, double cp1y, double cp2x, double cp2y, double x, double y);
-  void <a href=#dom-context-2d-arcto title=dom-context-2d-arcTo>arcTo</a>(double x1, double y1, double x2, double y2, double radius); <!-- see ARC-ORDER note below -->
-  void <a href=#dom-context-2d-rect title=dom-context-2d-rect>rect</a>(double x, double y, double w, double h);
-  void <a href=#dom-context-2d-arc title=dom-context-2d-arc>arc</a>(double x, double y, double radius, double startAngle, double endAngle, optional boolean anticlockwise = false); <!-- see ARC-ORDER note below -->
+  void <a href=#dom-context-2d-moveto title=dom-context-2d-moveTo>moveTo</a>(unrestricted double x, unrestricted double y);
+  void <a href=#dom-context-2d-lineto title=dom-context-2d-lineTo>lineTo</a>(unrestricted double x, unrestricted double y);
+  void <a href=#dom-context-2d-quadraticcurveto title=dom-context-2d-quadraticCurveTo>quadraticCurveTo</a>(unrestricted double cpx, unrestricted double cpy, unrestricted double x, unrestricted double y);
+  void <a href=#dom-context-2d-beziercurveto title=dom-context-2d-bezierCurveTo>bezierCurveTo</a>(unrestricted double cp1x, unrestricted double cp1y, unrestricted double cp2x, unrestricted double cp2y, unrestricted double x, unrestricted double y);
+  void <a href=#dom-context-2d-arcto title=dom-context-2d-arcTo>arcTo</a>(unrestricted double x1, unrestricted double y1, unrestricted double x2, unrestricted double y2, unrestricted double radius); <!-- see ARC-ORDER note below -->
+  void <a href=#dom-context-2d-rect title=dom-context-2d-rect>rect</a>(unrestricted double x, unrestricted double y, unrestricted double w, unrestricted double h);
+  void <a href=#dom-context-2d-arc title=dom-context-2d-arc>arc</a>(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); <!-- see ARC-ORDER note below -->
 };
 
 interface <dfn id=canvasgradient>CanvasGradient</dfn> {
@@ -705,8 +705,7 @@ interface <dfn id=imagedata>ImageData</dfn> {
 interface <dfn id=drawingstyle>DrawingStyle</dfn> { };
 <a href=#drawingstyle>DrawingStyle</a> implements <a href=#canvasdrawingstyles>CanvasDrawingStyles</a>;
 
-[<a href=#dom-path title=dom-Path>Constructor</a>,
- <span title=dom-Path-withdata>Constructor</span>(DOMString d)]
+[<a href=#dom-path title=dom-Path>Constructor</a>]
 interface <dfn id=path>Path</dfn> {
   void <a href=#dom-path-addpath title=dom-path-addPath>addPath</a>(<a href=#path>Path</a> path, <span>SVGMatrix</span>? transformation);
   void <a href=#dom-path-addpathbystrokingpath title=dom-path-addPathByStrokingPath>addPathByStrokingPath</a>(<a href=#path>Path</a> path, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation);
@@ -1222,7 +1221,7 @@ idea from Mihai:
 
     </dl></li>
 
-   <li><p>If <var title="">position</var> is greater than <var title="">width</var>, then jump to the step labeld
+   <li><p>If <var title="">position</var> is greater than <var title="">width</var>, then jump to the step labeled
    <i>joins</i>.</p></li>
 
    <li><p>If <var title="">segment length</var> is greater than zero,
